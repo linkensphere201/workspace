@@ -1,0 +1,105 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'file:///home/fatiao2/dist/plugins/vim-colorschemes'
+Plugin 'file:///home/fatiao2/dist/plugins/vim-clang-format'
+Plugin 'file:///home/fatiao2/dist/plugins/vim-cpp-modern'
+Plugin 'file:///home/fatiao2/dist/plugins/YouCompleteMe'
+Plugin 'file:///home/fatiao2/dist/plugins/vim-airline'
+Plugin 'file:///home/fatiao2/dist/plugins/vim-airline-themes'
+Plugin 'file:///home/fatiao2/dist/plugins/rainbow'
+Plugin 'file:///home/fatiao2/dist/plugins/nerdtree'
+Plugin 'file:///home/fatiao2/dist/plugins/vim-anyfold'
+Plugin 'file:///home/fatiao2/dist/plugins/vim-fold-cycle'
+"Plugin 'file:///home/fatiao2/dist/plugins/vim-go'
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+set mouse=
+set nu
+set tabstop=2
+set shiftwidth=2
+set ts=2
+set softtabstop=2
+set expandtab
+set autoindent
+set tags=tags
+
+syntax enable
+set hlsearch
+
+set t_Co=256
+set background=dark
+set backspace=2
+
+autocmd BufReadPost * if line("'\"") && line("'\"") <= line("$") | exe "normal `\"" | endif
+set cursorline
+
+
+set encoding=utf-8
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_show_diagnostics_ui = 0                   "disable syntax check of YCM
+let g:ycm_min_num_of_chars_for_completion=2
+let g:ycm_semantic_triggers =  {
+  \   'c' : ['->', '.'],
+  \   'objc' : ['->', '.', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s',
+  \             're!\[.*\]\s'],
+  \   'ocaml' : ['.', '#'],
+  \   'cpp,objcpp' : ['->', '.', '::'],
+  \   'perl' : ['->'],
+  \   'php' : ['->', '::'],
+  \   'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.'],
+  \   'ruby' : ['.', '::'],
+  \   'lua' : ['.', ':'],
+  \   'erlang' : [':'],
+  \ }
+
+let g:airline_powerline_fonts = 1  "支持 powerline 字体
+let g:airline#extensions#tabline#enabled = 1 "显示窗口tab和buffer
+
+" NERDTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+map <C-n> :NERDTreeToggle<CR>
+
+colorscheme thornbird
+let g:cpp_simple_highlight = 1
+let g:rainbow_active = 1
+
+" any fold
+autocmd Filetype * AnyFoldActivate
+set foldlevel=99
+hi Folded term=underline
+" activate anyfold by default
+augroup anyfold
+    autocmd!
+    autocmd Filetype <filetype> AnyFoldActivate
+augroup END
+
+" disable anyfold for large files
+let g:LargeFile = 1000000 " file is large if size greater than 1MB
+autocmd BufReadPre,BufRead * let f=getfsize(expand("<afile>")) | if f > g:LargeFile || f == -2 | call LargeFile() | endif
+function LargeFile()
+    augroup anyfold
+        autocmd! " remove AnyFoldActivate
+        autocmd Filetype <filetype> setlocal foldmethod=indent " fall back to indent folding
+    augroup END
+endfunction
+
+let g:fold_cycle_default_mapping = 0 "disable default mappings
+nmap <Tab><Tab> <Plug>(fold-cycle-open)
+nmap WW <Plug>(fold-cycle-close)
+
+source /home/fatiao2/dist/plugins/setcolor.vim
+source /home/fatiao2/dist/plugins/highlights.vim
