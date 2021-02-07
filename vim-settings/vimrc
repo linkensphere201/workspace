@@ -14,6 +14,7 @@ Plugin 'file:///home/fatiao2/dist/plugins/rainbow'
 Plugin 'file:///home/fatiao2/dist/plugins/nerdtree'
 Plugin 'file:///home/fatiao2/dist/plugins/vim-anyfold'
 Plugin 'file:///home/fatiao2/dist/plugins/vim-fold-cycle'
+Plugin 'file:///home/fatiao2/dist/plugins/tagbar'
 "Plugin 'file:///home/fatiao2/dist/plugins/vim-go'
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -100,6 +101,9 @@ endfunction
 let g:fold_cycle_default_mapping = 0 "disable default mappings
 nmap <Tab><Tab> <Plug>(fold-cycle-open)
 nmap WW <Plug>(fold-cycle-close)
+
+" tag bar shortcut
+nmap <C-m> :TagbarToggle<CR>
 
 source /home/fatiao2/dist/plugins/setcolor.vim
 source /home/fatiao2/dist/plugins/highlights.vim
