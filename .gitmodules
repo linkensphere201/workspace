@@ -1,0 +1,6 @@
+[submodule "thirdparty-tools/universal-ctags"]
+	path = thirdparty-tools/universal-ctags
+	url = https://github.com/universal-ctags/ctags.git
+[submodule "thirdparty-tools/the_silver_searcher"]
+	path = thirdparty-tools/the_silver_searcher
+	url = https://github.com/satanson/the_silver_searcher.git
