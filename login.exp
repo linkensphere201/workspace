@@ -1,22 +1,27 @@
 #!/usr/bin/expect
 
-# usage : login [host] [username] [password]
+# usage : ./$0 [host] [username] [password] [password_for_pubkey]
 
 set timeout 20
 
-set cmd [lrange $argv 1 end]
-set password [lindex $argv 0]
+set hst [lindex $argv 0] 
+set usr [lindex $argv 1]
+set pas [lindex $argv 2]
+set pub [lindex $argv 3]
 
-eval spawn $cmd
+eval spawn ssh $usr@$hst
 expect {
+    ".ssh/id_rsa':" {
+        send "$pub\r";
+    }
     "(yes/no)" {
         send "yes\r";
         expect "assword:" {
-            send "$password\r";
+            send "$pas\r";
         }
     }
     "assword:" {
-        send "$password\r";
+        send "$pas\r";
     }
 }
 interact
