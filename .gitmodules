@@ -4,3 +4,6 @@
 [submodule "thirdparty-tools/the_silver_searcher"]
 	path = thirdparty-tools/the_silver_searcher
 	url = https://github.com/satanson/the_silver_searcher.git
+[submodule "thirdparty-tools/cpp_etudes"]
+	path = thirdparty-tools/cpp_etudes
+	url = https://github.com/satanson/cpp_etudes.git
