@@ -1,5 +1,5 @@
 #!/bin/bash
-dirbase=/home/weijian.yang/vim-plugins
+dirbase='~/...'
 git clone https://github.com/flazz/vim-colorschemes.git ${dirbase}/vim-colorschemes
 git clone https://github.com/rhysd/vim-clang-format.git ${dirbase}/vim-clang-format
 git clone https://github.com/bfrg/vim-cpp-modern.git ${dirbase}/vim-cpp-modern
