@@ -13,3 +13,4 @@ git clone https://github.com/vim-scripts/DrawIt.git ${dirbase}/DrawIt
 git clone https://github.com/preservim/tagbar.git ${dirbase}/tagbar
 git clone https://github.com/LucHermitte/lh-vim-lib.git ${dirbase}/lh-vim-lib
 git clone https://github.com/LucHermitte/VimFold4C.git ${dirbase}/VimFold4C
+git clone https://github.com/dstein64/vim-win.git ${dirbase}/vim-win
