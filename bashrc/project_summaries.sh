@@ -39,3 +39,24 @@ function projectsum()
   fi
 }
 
+show_ldflags()
+{
+  libs="libasync.a
+libcompiler_ast.a
+libcompiler_base.a
+libcompiler_generators.a
+libcompiler_lib.a
+libconcurrency.a
+libmustache_lib.a
+librpcmetadata.a
+libthrift-core.a
+libthriftcpp2.a
+libthriftfrozen2.a
+libthriftmetadata.a
+libthriftprotocol.a
+libtransport.a"
+  for i in ""$libs""; do
+    a=$(echo $i | sed 's/lib//' | sed 's/\.a//')
+    echo -l$a
+  done
+}
