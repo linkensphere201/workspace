@@ -5,22 +5,22 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'file:///home/the_path_to/vim-plugins/DrawIt'
-Plugin 'file:///home/the_path_to/vim-plugins/nerdtree'
-Plugin 'file:///home/the_path_to/vim-plugins/rainbow'
-Plugin 'file:///home/the_path_to/vim-plugins/vim-airline'
-Plugin 'file:///home/the_path_to/vim-plugins/vim-airline-themes'
-Plugin 'file:///home/the_path_to/vim-plugins/vim-colorschemes'
-Plugin 'file:///home/the_path_to/vim-plugins/vim-cpp-modern'
-Plugin 'file:///home/the_path_to/vim-plugins/vim-clang-format'
-Plugin 'file:///home/the_path_to/vim-plugins/vim-fold-cycle'
-Plugin 'file:///home/the_path_to/vim-plugins/tagbar'
-Plugin 'file:///home/the_path_to/vim-plugins/lh-vim-lib'
-Plugin 'file:///home/the_path_to/vim-plugins/VimFold4C'
-Plugin 'file:///home/the_path_to/vim-plugins/YouCompleteMe'
-Plugin 'file:///home/the_path_to/vim-plugins/vim-cpp-enhanced-highlight'
-Plugin 'file:///home/the_path_to/vim-plugins/vim-win'
-Plugin 'file:///home/the_path_to/vim-plugins/vim-translator'
+Plugin 'file:///home/yourpath/vim-plugins/DrawIt'
+Plugin 'file:///home/yourpath/vim-plugins/nerdtree'
+Plugin 'file:///home/yourpath/vim-plugins/rainbow'
+Plugin 'file:///home/yourpath/vim-plugins/vim-airline'
+Plugin 'file:///home/yourpath/vim-plugins/vim-airline-themes'
+Plugin 'file:///home/yourpath/vim-plugins/vim-colorschemes'
+Plugin 'file:///home/yourpath/vim-plugins/vim-cpp-modern'
+Plugin 'file:///home/yourpath/vim-plugins/vim-clang-format'
+Plugin 'file:///home/yourpath/vim-plugins/vim-fold-cycle'
+Plugin 'file:///home/yourpath/vim-plugins/tagbar'
+Plugin 'file:///home/yourpath/vim-plugins/lh-vim-lib'
+Plugin 'file:///home/yourpath/vim-plugins/VimFold4C'
+Plugin 'file:///home/yourpath/vim-plugins/YouCompleteMe'
+Plugin 'file:///home/yourpath/vim-plugins/vim-cpp-enhanced-highlight'
+Plugin 'file:///home/yourpath/vim-plugins/vim-win'
+Plugin 'file:///home/yourpath/vim-plugins/vim-translator'
 call vundle#end()            " required
 filetype plugin indent on    " required
 " Brief help
@@ -35,10 +35,10 @@ filetype plugin indent on    " required
 
 set mouse=
 set nu
-set tabstop=2
-set shiftwidth=2
-set ts=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set ts=4
+set softtabstop=4
 set expandtab
 set autoindent
 set tags=tags
@@ -111,12 +111,13 @@ let g:fold_cycle_default_mapping = 0 "disable default mappings
 nmap <Tab><Tab> <Plug>(fold-cycle-open)
 nmap WW <Plug>(fold-cycle-close)
 
-" tag bar shortcut
+" tag bar settings
+let g:tagbar_file_size_limit = 10000
 let g:tagbar_left = 1
 nmap <C-m> :TagbarToggle<CR>
 
-source /home/the_path_to/workspace/vim-settings/setcolor.vim
-source /home/the_path_to/workspace/vim-settings/highlights.vim
+source /home/yourpath/workspace/vim-settings/setcolor.vim
+source /home/yourpath/workspace/vim-settings/highlights.vim
 
 
 " YouCompleteMe
@@ -138,3 +139,7 @@ let g:clang_format#style_options = {
 
 " translator
 nmap tt :Translate<CR>
+
+" open new files and jump back
+set hidden
+
