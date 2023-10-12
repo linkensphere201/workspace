@@ -15,3 +15,5 @@ git clone https://github.com/LucHermitte/lh-vim-lib.git ${dirbase}/lh-vim-lib
 git clone https://github.com/LucHermitte/VimFold4C.git ${dirbase}/VimFold4C
 git clone https://github.com/dstein64/vim-win.git ${dirbase}/vim-win
 git clone https://github.com/voldikss/vim-translator.git ${dirbase}/vim-translator 
+git clone https://github.com/neoclide/coc.nvim.git ${dirbase}/coc.nvim
+git clone https://github.com/fannheyward/coc-rust-analyzer ${dirbase}/coc-rust-analyzer
