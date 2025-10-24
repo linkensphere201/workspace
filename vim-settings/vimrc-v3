@@ -1,0 +1,61 @@
+set mouse=
+set nu
+set tabstop=4
+set shiftwidth=4
+set ts=4
+set softtabstop=4
+set expandtab
+set autoindent
+set tags=tags
+set nowrap
+
+syntax enable
+set hlsearch
+
+set t_Co=256
+set background=dark
+set backspace=2
+
+autocmd BufReadPost * if line("'\"") && line("'\"") <= line("$") | exe "normal `\"" | endif
+set cursorline
+set encoding=utf-8
+
+let g:airline_powerline_fonts = 1  "支持 powerline 字体
+let g:airline#extensions#tabline#enabled = 1 "显示窗口tab和buffer
+" NERDTree
+autocmd StdinReadPre * let s:std_in=1
+
+" NERDTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" trim whitespaces
+autocmd BufWritePre * %s/\s\+$//e
+
+map <C-n> :NERDTreeToggle<CR>
+map <C-w> :Win()<CR>
+
+colorscheme enzyme
+let g:cpp_simple_highlight = 1
+let g:rainbow_active = 1
+
+" tag bar settings
+let g:tagbar_file_size_limit = 800000
+"nmap <C-m> :TagbarToggle<CR>
+
+" open new files and jump back
+set hidden
+
+filetype plugin indent on " required
+syntax on                 " required
+
+autocmd Filetype * AnyFoldActivate               " activate for all filetypes
+set foldlevel=99 " Open all folds
+nnoremap <Tab><Tab> za
+let g:anyfold_fold_display = 0
+hi Folded term=underline cterm=bold ctermfg=14 guifg=#40ffff
