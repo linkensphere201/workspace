@@ -1,0 +1,13 @@
+{
+  "coc.nvim": { "branch": "release", "commit": "4fc88d4f70750e6896e0de317a231e49850bb374" },
+  "lazy.nvim": { "branch": "main", "commit": "db067881fff0fd4be8c00e5bde7492e0e1c77a2f" },
+  "mini.nvim": { "branch": "main", "commit": "d1a91582bf2d16026ae84292874c70fb2d0ffe42" },
+  "nerdtree": { "branch": "master", "commit": "690d061b591525890f1471c6675bcb5bdc8cdff9" },
+  "nvim-treesitter": { "branch": "master", "commit": "42fc28ba918343ebfd5565147a42a26580579482" },
+  "vim-airline": { "branch": "master", "commit": "159573187e9996d06cf26e49a533f424f4d70b43" },
+  "vim-airline-themes": { "branch": "master", "commit": "77aab8c6cf7179ddb8a05741da7e358a86b2c3ab" },
+  "vim-anyfold": { "branch": "master", "commit": "3ed5d8ccbf0f5031f7c7d2be05aa7ddb4550dc5c" },
+  "vim-colorschemes": { "branch": "master", "commit": "fd8f122cef604330c96a6a6e434682dbdfb878c9" },
+  "vim-set-colors-and-highlights": { "branch": "main", "commit": "7adef19cd4d5c93fa228942426a5a87b8a7cf059" },
+  "vim-win": { "branch": "master", "commit": "78be4acff9434372c6c0aeb0200dddc30fa8920c" }
+}
